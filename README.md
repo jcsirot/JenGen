@@ -77,5 +77,5 @@ The webservice starts on `localhost:9090`.
 
   * ✓ REST API + compiler
   * ✗ Webapp form designer
-  * ✗ hpi Repository
+  * ✗ HPI Repository (who want to pay the bill?)
 
