@@ -20,13 +20,13 @@ USAGE
 	$ mvn -C foo clean compile
 	...
 
-### Build Manifest
+### Build Manifest Specification
 
 The build manifest is written using the JSON format.
 
 (to be completed)
 
-### API
+### API Specification
 
   * `GET /api/info` -- returns API info
   * `POST /api/1/plugin/` -- post the build manifest, retrieve the java code as a .zip archive.
