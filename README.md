@@ -1,5 +1,5 @@
 
-*NOTICE! Jenplug is under development and is not yet production-ready*
+*NOTICE! Jenplug is under development and is not yet production-ready.*
 
 **Jenplug** (Jenkins Plugin Generator) is a small web service designed to generate Jenkins plugins:
 Submit your specification as a Build Manifest and get back your code.
@@ -15,7 +15,7 @@ USAGE
 		...
 	}
 	EOF
-	$ curl -X POST -d @foo.json $HOSTNAME/api
+	$ wget --post-file foo.json $HOSTNAME/api
 
 ### Build Manifest
 
