@@ -68,8 +68,8 @@ DEVELOPMENT
 
 Install maven, then compile and start the web service with:
 
-	$ git clone https://github.com/jcsirot/jenkins-plugin-generator.git
-	$ mvn -f jenkins-plugin-generator clean compile exec
+	$ git clone https://github.com/jcsirot/JenGen.git
+	$ mvn -f JenGen clean compile exec:exec
 
 The webservice starts on `localhost:9090`.
 
@@ -78,4 +78,3 @@ The webservice starts on `localhost:9090`.
   * ✓ REST API + compiler
   * ✗ Webapp form designer
   * ✗ HPI Repository (who want to pay the bill?)
-
