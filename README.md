@@ -16,6 +16,9 @@ USAGE
 	}
 	EOF
 	$ wget --post-file foo.json $HOSTNAME/api
+	$ unzip foo.zip
+	$ mvn -C foo clean compile
+	...
 
 ### Build Manifest
 
