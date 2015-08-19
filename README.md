@@ -1,8 +1,8 @@
 
 *NOTICE! JenGen is under development and is not yet production-ready.*
 
-**JenGen** (Jenkins Plugin Generator) is a small web service designed to generate Jenkins plugins:
-Submit your specification as a Build Manifest and get back your code.
+**JenGen** (Jenkins Plugin Generator) is a small web service for generating ad-hoc Jenkins plugins:
+Submit your specification as a Build Manifest and get back your plugin source code ready to be compiled.
 
 
 USAGE
@@ -10,26 +10,44 @@ USAGE
 
 ### Example
 
-	$ echo >foo.json <<EOF
+Submit a manifest for a pretend "hello" command with no parameter,
+and get the source code as a zip archive:
+
+	$ echo >hello.json <<EOF
 	{
-		...
+		"id": "com.example.hello",
+		"name": "hello",
+		"description": "invoke hello command",
+		"parameters": [],
+		"command": "hello"
 	}
 	EOF
-	$ wget --post-file foo.json $HOSTNAME/api
-	$ unzip foo.zip
-	$ mvn -f foo clean compile
-	...
+	$ wget --post-file hello.json $HOSTNAME/api
+
+Unzip the source code,
+compile it and run a Jenkins instance with the plugin installed:
+
+	$ unzip $ID.zip
+	$ mvn -f $ID clean package hpi:run
+
+For the compilation you'll need a Java 8 SDK and maven 3.
 
 ### Build Manifest Specification
 
 The build manifest is written using the JSON format.
 
-(to be completed)
+Attributes:
+  * id
+  * name
+  * description
+  * command
+  * parameters
+
 
 ### API Specification
 
-  * `GET /api/info` -- returns API info
-  * `POST /api/1/plugin/` -- post the build manifest, retrieve the java code as a .zip archive.
+  * `GET /api/info` -- returns the server and API versions
+  * `POST /api/1/plugin/` -- post the build manifest, get the java code as a zip archive.
 
 
 DEVELOPMENT
@@ -49,3 +67,4 @@ The webservice starts on `localhost:9090`.
   * ✓ REST API + compiler
   * ✗ Webapp form designer
   * ✗ hpi Repository
+
