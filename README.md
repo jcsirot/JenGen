@@ -40,14 +40,18 @@ and
 The build manifest is written using the JSON format.
 
 Attributes:
-  * id
-  * name
-  * description
-  * command -- the command to invoke
-  * parameters -- a parameter is a dict having the following attributes:
-    - id
-    - flag
-    - widget
+  * `id` (required string)
+  * `name` (required string)
+  * `description` (required? string)
+  * `command` (required string) the command to invoke
+  * `parameters` -- list of dicts having the following attributes:
+    - `id`
+    - `flag`
+    - `widget` -- dict having two attributes:
+      - `type` in (`textbox`, `number`, `password`, `checkbox`)
+      - `label` -- list of dict having the following attributes:
+        * `lang`
+        * `value`
 
 ### API Specification
 
