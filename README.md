@@ -1,7 +1,7 @@
 
-*NOTICE! Jenplug is under development and is not yet production-ready.*
+*NOTICE! JenGen is under development and is not yet production-ready.*
 
-**Jenplug** (Jenkins Plugin Generator) is a small web service designed to generate Jenkins plugins:
+**JenGen** (Jenkins Plugin Generator) is a small web service designed to generate Jenkins plugins:
 Submit your specification as a Build Manifest and get back your code.
 
 
@@ -40,7 +40,7 @@ DEVELOPMENT
 Install maven, then compile and start the web service with:
 
 	$ git clone https://github.com/jcsirot/jenkins-plugin-generator.git
-	$ mvn -f jenkins-plugin-generator exec
+	$ mvn -f jenkins-plugin-generator clean compile exec
 
 The webservice starts on `localhost:9090`.
 
