@@ -58,7 +58,7 @@ Attributes:
 ### API Specification
 
   * `GET /api/info` -- returns the server and API versions
-  * `POST /api/1/plugin/` -- post the build manifest, get the java code as a zip archive.
+  * `POST /api/1/plugin/` -- expect the build manifest as body, returns the corresponding source code zip archive.
 
 
 DEVELOPMENT
