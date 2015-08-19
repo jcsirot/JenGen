@@ -7,6 +7,25 @@
   <groupId>com.chelonix</groupId>
   <artifactId>jenkins-plugin-generator</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <license>MIT</license>
+  <developers>
+    <developer>
+      <name>JC Sirot</name>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Florent Claerhout</role>
+      <roles>
+        <role>tester</role>
+        <role>documentation</role>
+      </roles>
+    </contributor>
+  </contributors>
 
   <dependencies>
     <dependency>
