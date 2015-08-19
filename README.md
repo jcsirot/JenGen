@@ -4,7 +4,7 @@
 **JenGen** (Jenkins Plugin Generator) is a small web service for generating ad-hoc Jenkins plugins:
 Submit your specification as a _Build Manifest_ and get back your plugin source code ready to be compiled.
 
-Once compiled you'll get a Jenkins plugin [hpi archive](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial) that can be installed directly on your instance.
+Once compiled you'll get a Jenkins plugin [HPI archive](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial) that can be installed directly on your instance.
 
 
 USAGE
@@ -44,16 +44,16 @@ The build manifest is written using the JSON format.
 Attributes:
   * `id` (required string)
   * `name` (required string)
-  * `description` (required? string)
+  * `description` (optional string)
   * `command` (required string) the command to invoke
   * `parameters` -- list of dicts having the following attributes:
-    - `id`
-    - `flag`
+    - `id` (required string)
+    - `flag` (required string)
     - `widget` -- dict having two attributes:
       - `type` in (`textbox`, `number`, `password`, `checkbox`)
       - `label` -- list of dict having the following attributes:
-        * `lang`
-        * `value`
+        * `lang` (required string) ISO 3166 country code, e.g. "en", "fr"...
+        * `value` (required string)
 
 ### API Specification
 
