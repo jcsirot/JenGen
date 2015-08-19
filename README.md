@@ -2,16 +2,22 @@
 JenGen -- Jenkins Plugin Generator
 ==================================
 
-*NOTICE! JenGen is under development*
+*NOTICE! JenGen is under development and is not yet production-ready*
 
-**JenGen** is a web service designed to generate Jenkins plugins easily: submit your specification and get back your code.
+**JenGen** is a user-friendly web service designed to generate Jenkins plugins: submit your specification and get back your code.
 
 Build Manifest
 --------------
 
-(todo)
+The build manifest is written using the JSON format.
 
 API
 ---
 
-(todo)
+### /
+
+Blah
+
+### /info
+
+Blah
