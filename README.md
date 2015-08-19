@@ -24,7 +24,7 @@ and get the source code as a zip archive:
 		"command": "hello"
 	}
 	EOF
-	$ wget --post-file hello.json localhost:9090/api/1/plugin/
+	$ wget --post-file hello.json -H "Content-type: application/json" localhost:9090/api/1/plugin/
 
 Unzip the source code,
 compile it and run a Jenkins instance with the plugin installed:
