@@ -1,15 +1,23 @@
 
-JenGen — Jenkins Plugin Generator
-==================================
+Jenplug -- Jenkins Plugin Generator
+===================================
 
-*NOTICE! JenGen is under development and is not yet production-ready*
+*NOTICE! Jenplug is under development and is not yet production-ready*
 
-**JenGen** is a user-friendly web service designed to generate Jenkins plugins: submit your specification (see Build Manifest below) and get back your code.
+**Jenplug** is a small web service designed to generate Jenkins plugins:
+Submit your specification as a Build Manifest and get back your code.
 
 Usage
 -----
 
 ### Example
+
+	$ echo >foo.json <<EOF
+	{
+		...
+	}
+	EOF
+	$ curl -X POST -d @foo.json $HOSTNAME/api
 
 ### Build Manifest
 
@@ -19,10 +27,23 @@ The build manifest is written using the JSON format.
 
 ### API
 
-  * `POST /`
-  * `GET /info`
+  * `GET /api/info` -- returns API info
+  * `POST /api/1/plugin/` -- post the build manifest, retrieve the java code as a .zip archive.
 
 Development
 -----------
 
-(to be completed)
+### Bootstrap
+
+Install maven, then compile and start the web service with:
+
+	$ git clone https://github.com/jcsirot/jenkins-plugin-generator.git
+	$ mvn -C jenkins-plugin-generator exec
+
+The webservice starts on `localhost:9000`.
+
+### Roadmap
+
+  * ✓ REST API + compiler
+  * ✗ Webapp form designer
+  * ✗ hpi Repository
