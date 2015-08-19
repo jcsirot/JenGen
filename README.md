@@ -17,7 +17,7 @@ USAGE
 	EOF
 	$ wget --post-file foo.json $HOSTNAME/api
 	$ unzip foo.zip
-	$ mvn -C foo clean compile
+	$ mvn -f foo clean compile
 	...
 
 ### Build Manifest Specification
@@ -40,9 +40,9 @@ DEVELOPMENT
 Install maven, then compile and start the web service with:
 
 	$ git clone https://github.com/jcsirot/jenkins-plugin-generator.git
-	$ mvn -C jenkins-plugin-generator exec
+	$ mvn -f jenkins-plugin-generator exec
 
-The webservice starts on `localhost:9000`.
+The webservice starts on `localhost:9090`.
 
 ### Roadmap
 
