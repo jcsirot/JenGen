@@ -40,9 +40,11 @@ Attributes:
   * id
   * name
   * description
-  * command
-  * parameters
-
+  * command -- the command to invoke
+  * parameters -- a parameter is a dict having the following attributes:
+    - id
+    - flag
+    - widget
 
 ### API Specification
 
