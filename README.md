@@ -1,13 +1,11 @@
 
-Jenplug -- Jenkins Plugin Generator
-===================================
-
 *NOTICE! Jenplug is under development and is not yet production-ready*
 
-**Jenplug** is a small web service designed to generate Jenkins plugins:
+**Jenplug** (Jenkins Plugin Generator) is a small web service designed to generate Jenkins plugins:
 Submit your specification as a Build Manifest and get back your code.
 
-Usage
+
+USAGE
 -----
 
 ### Example
@@ -30,7 +28,8 @@ The build manifest is written using the JSON format.
   * `GET /api/info` -- returns API info
   * `POST /api/1/plugin/` -- post the build manifest, retrieve the java code as a .zip archive.
 
-Development
+
+DEVELOPMENT
 -----------
 
 ### Bootstrap
