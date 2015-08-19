@@ -22,15 +22,18 @@ and get the source code as a zip archive:
 		"command": "hello"
 	}
 	EOF
-	$ wget --post-file hello.json $HOSTNAME/api
+	$ wget --post-file hello.json localhost:9090/api/1/plugin/
 
 Unzip the source code,
 compile it and run a Jenkins instance with the plugin installed:
 
-	$ unzip $ID.zip
-	$ mvn -f $ID clean package hpi:run
+	$ unzip hello.zip
+	$ mvn -f hello clean package hpi:run
 
-For the compilation you'll need a Java 8 SDK and maven 3.
+For the compilation you'll need a
+[Java 8 SDK](http://java.oracle.com)
+and
+[maven 3](http://maven.apache.org).
 
 ### Build Manifest Specification
 
