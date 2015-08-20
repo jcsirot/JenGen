@@ -1,0 +1,12 @@
+<f:entry title="${%{{widget.defaultLabel.value}}}" field="{{id}}">
+  <select name="{{id}}">
+      {{#widget.options}}
+      <j:if test="${'{{value}}'==instance.{{id}}}">
+      <option value="{{value}}" selected="true">{{label}}</option>
+      </j:if>
+      <j:if test="${'{{value}}'!=instance.{{id}}}">
+      <option value="{{value}}">{{label}}</option>
+      </j:if>
+      {{/widget.options}}
+  </select>
+</f:entry>

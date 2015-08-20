@@ -1,0 +1,14 @@
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/generator/PasswordParameter.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/Templater.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/Command.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/JenGen.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/PluginFile.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/Parameter.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/generator/StringParameter.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/generator/BooleanParameter.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/WidgetLabel.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/WidgetSelectOption.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/Widget.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/generator/ParameterGenerator.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/model/PluginRequest.java
+/home/jcsirot/github/JenGen/libjengen/src/main/java/com/chelonix/jengen/generator/AbstractGenerator.java

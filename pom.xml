@@ -4,9 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.chelonix</groupId>
-  <artifactId>jengen</artifactId>
+  <groupId>com.chelonix.jengen</groupId>
+  <artifactId>parent</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
   <licenses>
     <license>
       <name>MIT</name>
@@ -32,28 +34,41 @@
     </contributor>
   </contributors>
 
-  <dependencies>
-    <dependency>
-      <groupId>net.code-story</groupId>
-      <artifactId>http</artifactId>
-      <version>${http.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>18.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.spullara.mustache.java</groupId>
-      <artifactId>compiler</artifactId>
-      <version>${mustache.version}</version>
-    </dependency>
-  </dependencies>
+  <modules>
+    <module>libjengen</module>
+    <module>server</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+	<groupId>com.chelonix.jengen</groupId>
+	<artifactId>libjengen</artifactId>
+	<version>${project.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>net.code-story</groupId>
+	<artifactId>http</artifactId>
+	<version>${http.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+	<version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>com.google.guava</groupId>
+	<artifactId>guava</artifactId>
+	<version>${guava.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>com.github.spullara.mustache.java</groupId>
+	<artifactId>compiler</artifactId>
+	<version>${mustache.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
 
   <build>
     <pluginManagement>
@@ -125,6 +140,7 @@
     <http.version>2.98</http.version>
     <mustache.version>0.9.0</mustache.version>
     <lombok.version>1.16.4</lombok.version>
+    <guava.version>18.0</guava.version>
 
     <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
     <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
