@@ -6,6 +6,7 @@
 
   <groupId>com.chelonix.jengen</groupId>
   <artifactId>jengen-parent</artifactId>
+  <name>JenGen</name>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
