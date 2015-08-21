@@ -1,7 +1,13 @@
 package com.chelonix.jengen.server;
 
+import static com.google.common.io.Resources.*;
+
 import net.codestory.http.annotations.Get;
 import net.codestory.http.annotations.Prefix;
+
+import java.io.InputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,22 +19,34 @@ import net.codestory.http.annotations.Prefix;
 @Prefix("/api/info")
 public class ServerInfoResource {
 
-    private static final String VERSION = "1.0-SNAPSHOT";
-    static final String API_VERSION = "1";
+    private final ServerInfo serverInfo;
 
-    private static final ServerInfo SERVER_INFO = new ServerInfo(VERSION, API_VERSION);
+    public ServerInfoResource() {
+	try {
+	    Properties props = new Properties();
+	    props.load(getResource("properties/version.properties").openStream());
+	    String version = props.getProperty("app.version");
+	    String buildNumber = props.getProperty("app.buildNumber");
+	    String apiVersion = props.getProperty("api.version");
+	    serverInfo = new ServerInfo(version, buildNumber, apiVersion);
+	} catch (IOException ioe) {
+	    throw new RuntimeException("Unable to load properties", ioe);
+	}
+    }
 
     @Get("/")
     public ServerInfo getInfo() {
-        return SERVER_INFO;
+        return serverInfo;
     }
 
     public static final class ServerInfo {
         public final String version;
+	public final String build_number;
         public final String api_version;
 
-        public ServerInfo(String version, String api_version) {
+        public ServerInfo(String version, String build_number, String api_version) {
             this.api_version = api_version;
+	    this.build_number = build_number;
             this.version = version;
         }
     }

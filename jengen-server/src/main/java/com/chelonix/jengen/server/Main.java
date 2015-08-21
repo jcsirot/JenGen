@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         new WebServer().configure(routes -> routes
             .add(ServerInfoResource.class)
-            .add("/api/" + ServerInfoResource.API_VERSION, APIResource.class))
+            .add("/api/1", APIResource.class))
         .start(9090);
     }
 }
