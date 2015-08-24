@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.chelonix.jengen</groupId>
-  <artifactId>jengen-parent</artifactId>
-  <name>JenGen</name>
+  <groupId>com.chelonix.jenerator</groupId>
+  <artifactId>jenerator-parent</artifactId>
+  <name>Jenerator</name>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -36,22 +36,22 @@
   </contributors>
 
   <modules>
-    <module>libjengen</module>
-    <module>jengen-server</module>
-    <module>jengen-cli</module>
+    <module>libjenerator</module>
+    <module>jenerator-server</module>
+    <module>jenerator-cli</module>
   </modules>
 
   <scm>
-    <url>https://github.com/jcsirot/JenGen</url>
-    <connection>scm:git:git://github.com/jcsirot/JenGen.git</connection>
-    <developerConnection>scm:git:git://github.com/jcsirot/JenGen.git</developerConnection>
+    <url>https://github.com/jcsirot/jenerator</url>
+    <connection>scm:git:git://github.com/jcsirot/jenerator.git</connection>
+    <developerConnection>scm:git:git@github.com:jcsirot/jenerator.git</developerConnection>
   </scm>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.chelonix.jengen</groupId>
-        <artifactId>libjengen</artifactId>
+        <groupId>com.chelonix.jenerator</groupId>
+        <artifactId>libjenerator</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
