@@ -9,10 +9,10 @@ RUN curl -s -k -L -C - -b "oraclelicense=accept-securebackup-cookie" http://down
 ENV JAVA_HOME /jdk1.8.0_60
 ENV PATH $PATH:$JAVA_HOME/bin
 
-WORKDIR /home/jengen
+WORKDIR /home/jenerator
 
-ADD target/jengen-server.jar /home/jengen/jengen-server.jar
-ADD start.sh /home/jengen/start.sh
+ADD target/jenerator-server.jar /home/jenerator/jenerator-server.jar
+ADD start.sh /home/jenerator/start.sh
 
 EXPOSE 9090
 ENTRYPOINT ["./start.sh"]
