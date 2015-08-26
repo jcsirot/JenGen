@@ -12,28 +12,23 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.docopt.Docopt;
 
-/**
- * Created with IntelliJ IDEA.
- * User: jcsirot
- * Date: 20/08/15
- * Time: 11:22
- * To change this template use File | Settings | File Templates.
- */
 public class Main {
 
     public static final String USAGE = "" +
-            "JenGen\n"
-            + "\n"
-            + "Usage:\n"
-            + "  jenerator <MANIFEST> (-o FILE | --output=FILE)\n"
-            + "  jenerator (-h | --help)\n"
-            + "  jenerator --version\n"
-            + "\n"
-            + "Options:\n"
-            + "  -h --help                 Show this screen.\n"
-            + "  --version                 Show version.\n"
-            + "  -o FILE --output=FILE     Specify output file [default: ./plugin.zip]\n"
-            + "\n";
+        "Generate Jenkins plugin code from a build manifest.\n"
+        + "\n"
+        + "Usage:\n"
+        + "  jenerator [options] MANIFEST\n"
+        + "  jenerator --version\n"
+        + "  jenerator --help\n"
+        + "\n"
+        + "Options:\n"
+        + "  -o FILE, --output=FILE  Specify output file [default: ./plugin.zip]\n"
+        + "  -V, --version           Show version.\n"
+        + "  -h, --help              Show this screen.\n"
+        + "\n"
+        + "For the build manifest syntax, please check the online documentation.\n"
+        + "\n";
 
     private static final String DEFAULT_OUTPUT = "plugin.zip";
 
@@ -48,7 +43,6 @@ public class Main {
         } else {
             output = new File("plugin.zip");
         }
-
 
         Gson gson = new GsonBuilder().create();
         PluginRequest manifest = gson.fromJson(new FileReader(new File(opts.get("<MANIFEST>").toString())), PluginRequest.class);
