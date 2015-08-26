@@ -127,9 +127,9 @@ public class Templater {
             public String apply(String s)
             {
                 List<String> constructorParameters = request.getParameters().stream()
-                        .map(p -> generators.get(p.getType()).generateConstructorParameter(p))
+                        .map(p -> ", " + generators.get(p.getType()).generateConstructorParameter(p))
                         .collect(Collectors.toList());
-                return String.join(",", constructorParameters);
+                return String.join("", constructorParameters);
             }
         };
 

@@ -46,7 +46,7 @@ public class CustomToolBuilder extends Builder {
     {{/parameters}}
 
     @DataBoundConstructor
-    public CustomToolBuilder(String installationName,{{#constructor}}{{/constructor}})
+    public CustomToolBuilder(String installationName{{#constructor}}{{/constructor}})
     {
         this.installationName = installationName;
         {{#parameters}}
