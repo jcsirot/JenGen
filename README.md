@@ -1,6 +1,6 @@
 
 
-**Jenerator** (Jenkins Plugin Generator) is toolkit — a library, command line application and REST web service — for generating ad-hoc [Jenkins plugins](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial):
+**Jenerator** (Jenkins Plugin Generator) is a toolkit — a library, a command line application and a REST web service — for generating ad-hoc [Jenkins plugins](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial):
 Submit your specification as a _Build Manifest_ and get back your plugin source code ready to be compiled!
 
 
