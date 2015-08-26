@@ -76,7 +76,8 @@ DEVELOPMENT
 Install maven, then compile and start the web service with:
 
 	$ git clone https://github.com/jcsirot/jenerator.git
-	$ mvn -f jenerator clean compile exec:exec
+	$ mvn -f jenerator clean compile
+	$ mvn -f jenerator/jenerator-server exec:exec
 
 The webservice starts on `localhost:9090`.
 
