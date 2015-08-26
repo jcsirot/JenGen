@@ -1,10 +1,7 @@
 
-*NOTICE! JenGen is under development and is not yet production-ready.*
 
-**JenGen** (Jenkins Plugin Generator) is a small web service for generating ad-hoc Jenkins plugins:
-Submit your specification as a _Build Manifest_ and get back your plugin source code ready to be compiled.
-
-Once compiled you'll get a Jenkins plugin [HPI archive](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial) that can be installed directly on your instance.
+**Jenerator** (Jenkins Plugin Generator) is toolkit — a library, command line application and REST web service — for generating ad-hoc [Jenkins plugins](https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial):
+Submit your specification as a _Build Manifest_ and get back your plugin source code ready to be compiled!
 
 
 USAGE
@@ -21,9 +18,13 @@ and get the source code as a zip archive:
 		"name": "hello",
 		"description": "invoke hello command",
 		"parameters": [],
-		"command": "hello"
+		"command": {
+			"executable": "hello"
+		}
 	}
 	EOF
+	$ java -jar jenerator-cli/target/jenerator-cli-1.0-SNAPSHOT.jar hello.json
+	# or:
 	$ wget --post-file hello.json -H "Content-type: application/json" localhost:9090/api/1/plugin/
 
 Unzip the source code,
@@ -45,7 +46,7 @@ Attributes:
   * `id` (required string)
   * `name` (required string)
   * `description` (optional string)
-  * `command` (required string) the command to invoke
+  * `command` (required string) dict with a single attribute `executable` which value is the command to invoke
   * `parameters` -- list of dicts having the following attributes:
     - `id` (required string)
     - `flag` (required string)
@@ -68,8 +69,8 @@ DEVELOPMENT
 
 Install maven, then compile and start the web service with:
 
-	$ git clone https://github.com/jcsirot/JenGen.git
-	$ mvn -f JenGen clean compile exec:exec
+	$ git clone https://github.com/jcsirot/jenerator.git
+	$ mvn -f jenerator clean compile exec:exec
 
 The webservice starts on `localhost:9090`.
 
