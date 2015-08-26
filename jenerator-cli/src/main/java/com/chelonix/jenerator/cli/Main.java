@@ -45,7 +45,7 @@ public class Main {
         }
 
         Gson gson = new GsonBuilder().create();
-        PluginRequest manifest = gson.fromJson(new FileReader(new File(opts.get("<MANIFEST>").toString())), PluginRequest.class);
+        PluginRequest manifest = gson.fromJson(new FileReader(new File(opts.get("MANIFEST").toString())), PluginRequest.class);
         JenGen jenGen = new JenGen();
         byte[] zip = jenGen.generate(manifest);
         Files.write(zip, output);
