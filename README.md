@@ -9,8 +9,7 @@ USAGE
 
 ### Example
 
-Submit a manifest for a pretend "hello" command with no parameter,
-and get the source code as a zip archive:
+Prepare the build manifest — here a pretend "hello" command with no parameter:
 
 	$ echo >hello.json <<EOF
 	{
@@ -23,9 +22,13 @@ and get the source code as a zip archive:
 		}
 	}
 	EOF
-	# using the CLI tool:
-	$ java -jar jenerator-cli/target/jenerator-cli-1.0-SNAPSHOT.jar hello.json
-	# using the REST service:
+
+Get back the zipped code by using the CLI tool:
+
+	$ java -jar jenerator-cli/target/jenerator-cli-1.0-SNAPSHOT.jar hello.json -o hello.zip
+
+Or by using the REST service:
+
 	$ wget --post-file hello.json -H "Content-type: application/json" localhost:9090/api/1/plugin/
 
 Unzip the source code,
