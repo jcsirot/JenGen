@@ -14,7 +14,7 @@ and get the source code as a zip archive:
 
 	$ echo >hello.json <<EOF
 	{
-		"id": "com.example.hello",
+		"id": "hello",
 		"name": "hello",
 		"description": "invoke hello command",
 		"parameters": [],
@@ -23,8 +23,9 @@ and get the source code as a zip archive:
 		}
 	}
 	EOF
+	# using the CLI tool:
 	$ java -jar jenerator-cli/target/jenerator-cli-1.0-SNAPSHOT.jar hello.json
-	# or:
+	# using the REST service:
 	$ wget --post-file hello.json -H "Content-type: application/json" localhost:9090/api/1/plugin/
 
 Unzip the source code,
@@ -43,23 +44,23 @@ and
 The build manifest is written using the JSON format.
 
 Attributes:
-  * `id` (required string)
-  * `name` (required string)
+  * `id` (required string) — artifact ID (POM attribute)
+  * `name` (required string) — artifact name (POM attribute)
   * `description` (optional string)
   * `command` (required string) dict with a single attribute `executable` which value is the command to invoke
-  * `parameters` -- list of dicts having the following attributes:
+  * `parameters` — list of dicts having the following attributes:
     - `id` (required string)
     - `flag` (required string)
-    - `widget` -- dict having two attributes:
+    - `widget` — dict having two attributes:
       - `type` in (`textbox`, `number`, `password`, `checkbox`)
-      - `label` -- list of dict having the following attributes:
+      - `label` — list of dict having the following attributes:
         * `lang` (required string) ISO 3166 country code, e.g. "en", "fr"...
         * `value` (required string)
 
 ### API Specification
 
-  * `GET /api/info` -- returns the server and API versions
-  * `POST /api/1/plugin/` -- expect the build manifest as body, returns the corresponding source code zip archive.
+  * `GET /api/info` — returns the server and API versions
+  * `POST /api/1/plugin/` — build manifest as body, returns the corresponding source code zip archive.
 
 
 DEVELOPMENT
