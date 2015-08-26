@@ -37,6 +37,8 @@ compile it and run a Jenkins instance with the plugin installed:
 	$ unzip hello.zip
 	$ mvn -f hello clean package hpi:run
 
+Keep in mind the resulting artifact is an HPI file.
+
 For the compilation you'll need a
 [Java 8 SDK](http://java.oracle.com)
 and
