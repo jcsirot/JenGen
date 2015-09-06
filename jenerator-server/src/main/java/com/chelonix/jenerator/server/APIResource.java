@@ -1,6 +1,6 @@
 package com.chelonix.jenerator.server;
 
-import com.chelonix.jenerator.JenGen;
+import com.chelonix.jenerator.Jenerator;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ import net.codestory.http.annotations.Prefix;
 @Prefix("/plugin")
 public class APIResource {
 
-    private final JenGen jengen = new JenGen();
+    private final Jenerator jengen = new Jenerator();
 
     @Post("/")
     public byte[] newPlugin(PluginRequest request) throws IOException {

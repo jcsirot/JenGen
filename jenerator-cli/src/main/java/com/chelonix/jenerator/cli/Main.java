@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
 
-import com.chelonix.jenerator.JenGen;
+import com.chelonix.jenerator.Jenerator;
 import com.chelonix.jenerator.model.PluginRequest;
 import com.google.common.io.Files;
 import com.google.gson.Gson;
@@ -46,7 +46,7 @@ public class Main {
 
         Gson gson = new GsonBuilder().create();
         PluginRequest manifest = gson.fromJson(new FileReader(new File(opts.get("MANIFEST").toString())), PluginRequest.class);
-        JenGen jenGen = new JenGen();
+        Jenerator jenGen = new Jenerator();
         byte[] zip = jenGen.generate(manifest);
         Files.write(zip, output);
     }

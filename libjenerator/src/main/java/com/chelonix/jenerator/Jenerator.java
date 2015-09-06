@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class JenGen {
+public class Jenerator {
 
     private final Templater templater = new Templater();
 
