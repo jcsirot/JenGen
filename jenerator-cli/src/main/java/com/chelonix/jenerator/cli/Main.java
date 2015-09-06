@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Properties;
 
 import com.chelonix.jenerator.Jenerator;
 import com.chelonix.jenerator.model.PluginRequest;
@@ -11,6 +12,8 @@ import com.google.common.io.Files;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.docopt.Docopt;
+
+import static com.google.common.io.Resources.getResource;
 
 public class Main {
 
@@ -33,7 +36,12 @@ public class Main {
     private static final String DEFAULT_OUTPUT = "plugin.zip";
 
     public static void main(String... args) throws IOException {
-        Map<String, Object> opts = new Docopt(USAGE).withVersion("JenGen 1.0-SNAPSHOT").parse(args);
+
+        Properties props = new Properties();
+        props.load(getResource("properties/version.properties").openStream());
+        String version = props.getProperty("app.name") + " " + props.getProperty("app.version");
+
+        Map<String, Object> opts = new Docopt(USAGE).withVersion(version).parse(args);
         File output;
         if (opts.containsKey("--output")) {
             output = new File(opts.get("--output").toString());
